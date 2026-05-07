@@ -1,0 +1,28 @@
+### Get all products
+GET {{host}}/api/products/
+
+### Get product by ID
+GET {{host}}/api/products/1
+
+### Create product
+POST {{host}}/api/products/
+Content-Type: application/json
+
+{
+  "name": "Laptop",
+  "description": "High-performance laptop",
+  "price": 1299.99
+}
+
+### Update product
+PUT {{host}}/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Laptop Pro",
+  "description": "Updated high-performance laptop",
+  "price": 1499.99
+}
+
+### Delete product
+DELETE {{host}}/api/products/1

@@ -5,6 +5,7 @@ import it.kevien.demo.productservice.model.dto.ProductResponse;
 import it.kevien.demo.productservice.service.ProductService;
 import lombok.AllArgsConstructor;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +37,7 @@ public class ProductController {
 
     @PostMapping("/")
     public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest product) {
-        return ResponseEntity.ok(productService.addProduct(product));
+        return ResponseEntity.status(HttpStatus.CREATED).body(productService.addProduct(product));
     }
 
     @PutMapping("/{id}")
